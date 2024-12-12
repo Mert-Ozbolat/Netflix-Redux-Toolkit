@@ -1,13 +1,13 @@
 import React from 'react'
 import { NavigationContainer } from "@react-navigation/native"
-import Navigate from './example/route/route'
+import { StackNavigation } from './src/router/rootNavigation'
 
 
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Navigate />
+      <StackNavigation />
     </NavigationContainer>
   )
 }
