@@ -1,16 +1,23 @@
 import { Button } from 'react-native'
 import React from 'react'
 import { colors } from '../theme/colors';
-import { SINGIN } from '../utils/routes';
+import { SINGIN, WATCHLIST } from '../utils/routes';
 import { useNavigation } from '@react-navigation/native';
 
-const StartButton = () => {
+const StartButton = ({ GETSTARTED }) => {
+
     const navigation = useNavigation();
     return (
         <Button
-            title='GET START'
+            title={GETSTARTED ? 'Get Start' : 'Sign In'}
             color={colors.btnColor}
-            onPress={() => navigation.navigate(SINGIN)}
+            onPress={() => {
+                GETSTARTED ? (
+                    navigation.navigate(SINGIN)
+                ) : (
+                    navigation.navigate(WATCHLIST)
+                )
+            }}
         />
     )
 }

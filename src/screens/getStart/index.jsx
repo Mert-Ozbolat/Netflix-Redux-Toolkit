@@ -3,13 +3,14 @@ import React from 'react';
 import getStart from '../../styles/getStart';
 import Slider from '../../components/slider';
 import StartButton from '../../components/button'
+import { GETSTARTED } from '../../utils/routes';
 
 const StartScreen = () => {
     return (
         <View style={getStart.container}>
             <Slider />
 
-            <StartButton />
+            <StartButton GETSTARTED={GETSTARTED} />
 
         </View>
     );
