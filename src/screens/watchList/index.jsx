@@ -1,20 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import React from 'react'
-import watchList from '../../styles/watchList'
+import watchListStyle from '../../styles/watchList'
+import { useSelector } from 'react-redux'
+import WatchListItem from '../../components/watchList/watchListItem'
 
 const WatchListScreen = () => {
+
+    const { watchList } = useSelector(state => state.watchList)
+
     return (
-        <View style={watchList.container}>
-            <Text style={watchList.title}>Who's Watching?</Text>
+        <View style={watchListStyle.container}>
+            <Text style={watchListStyle.title}>Who's Watching?</Text>
 
+            <FlatList
+                contentContainerStyle={{ alignItems: 'center' }}
+                numColumns={2}
+                data={watchList}
+                renderItem={({ item }) => <WatchListItem item={item} />}
+            />
 
-            <View>
-
-                <View>
-
-                </View>
-
-            </View>
         </View>
     )
 }

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native"
 import { colors } from "../theme/colors";
 
 
-const watchList = StyleSheet.create({
+const watchListStyle = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.bgColor,
@@ -18,4 +18,4 @@ const watchList = StyleSheet.create({
 
 
 
-export default watchList;
+export default watchListStyle;
