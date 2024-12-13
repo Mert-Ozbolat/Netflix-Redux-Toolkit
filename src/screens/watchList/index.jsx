@@ -13,12 +13,10 @@ const WatchListScreen = () => {
             <Text style={watchListStyle.title}>Who's Watching?</Text>
 
             <FlatList
-                contentContainerStyle={{ alignItems: 'center' }}
                 numColumns={2}
                 data={watchList}
                 renderItem={({ item }) => <WatchListItem item={item} />}
             />
-
         </View>
     )
 }

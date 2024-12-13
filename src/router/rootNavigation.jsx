@@ -35,8 +35,12 @@ function StackNavigation() {
             <Stack.Screen
                 options={{
                     headerShown: true,
-                    headerRight: () => <Magicpen size={32} color='#000' />,
+                    headerRight: () => <Magicpen size={32} color='#fff' />,
                     headerTitle: '',
+                    headerTintColor: colors.text,
+                    headerStyle: {
+                        backgroundColor: colors.bgColor
+                    },
                 }}
                 name={WATCHLIST} component={WatchListScreen} />
         </Stack.Navigator>
