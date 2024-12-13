@@ -1,13 +1,15 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GETSTARTED, HOME, SINGIN, WATCHLIST } from '../utils/routes';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { DOWNLOADS, GETSTARTED, HOME, NEWHOT, SEARCH, SINGIN, TAB, WATCHLIST } from '../utils/routes';
 import StartScreen from '../screens/getStart';
 import SigninScreen from '../screens/signin';
 import WatchListScreen from '../screens/watchList';
-import { Image, ImageBackground, View } from 'react-native';
+import { ImageBackground } from 'react-native';
 import signIn from '../styles/signIn';
 import { colors } from '../theme/colors';
-import { Edit, Magicpen } from 'iconsax-react-native';
+import { Magicpen } from 'iconsax-react-native';
 import Home from '../screens/home';
+import TabBarNavigation from './tabBarNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,12 +48,13 @@ function StackNavigation() {
                 name={WATCHLIST} component={WatchListScreen} />
 
 
-            <Stack.Screen name={HOME} component={Home} />
-
+            <Stack.Screen name={HOME} component={TabBarNavigation} />
 
         </Stack.Navigator>
     );
 }
+
+
 
 
 export { StackNavigation }
