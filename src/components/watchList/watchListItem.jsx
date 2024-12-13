@@ -1,18 +1,25 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import React from 'react'
 import { colors } from '../../theme/colors'
+import { width } from '../../utils/constants'
+import { useNavigation } from '@react-navigation/native'
+import { HOME } from '../../utils/routes'
+
 
 
 const WatchListItem = ({ item }) => {
 
+    const navigation = useNavigation()
 
     return (
-        <View style={styles.container}>
-            <View style={styles.cart}>
-                <Image style={styles.image} source={`${item.image}`} />
-                <Text style={styles.name}>{item.name}</Text>
+        <Pressable onPress={() => navigation.navigate(HOME, { item })}>
+            <View style={styles.container}>
+                <View style={styles.cart}>
+                    <Image style={styles.image} source={`${item.image}`} />
+                    <Text style={styles.name}>{item.name}</Text>
+                </View>
             </View>
-        </View>
+        </Pressable>
     )
 }
 
@@ -24,8 +31,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     cart: {
-        width: 100,
-        height: 100,
+        width: width * 0.3,
+        height: width * 0.3,
         margin: 25
     },
     image: {

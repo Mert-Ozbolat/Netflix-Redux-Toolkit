@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GETSTARTED, SINGIN, WATCHLIST } from '../utils/routes';
+import { GETSTARTED, HOME, SINGIN, WATCHLIST } from '../utils/routes';
 import StartScreen from '../screens/getStart';
 import SigninScreen from '../screens/signin';
 import WatchListScreen from '../screens/watchList';
@@ -7,6 +7,7 @@ import { Image, ImageBackground, View } from 'react-native';
 import signIn from '../styles/signIn';
 import { colors } from '../theme/colors';
 import { Edit, Magicpen } from 'iconsax-react-native';
+import Home from '../screens/home';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,11 @@ function StackNavigation() {
                     },
                 }}
                 name={WATCHLIST} component={WatchListScreen} />
+
+
+            <Stack.Screen name={HOME} component={Home} />
+
+
         </Stack.Navigator>
     );
 }
