@@ -12,6 +12,14 @@ const signIn = StyleSheet.create({
         paddingHorizontal: 20,
     },
 
+    headerImg: {
+        flex: 1,
+        width: 120,
+        height: 30,
+        left: 50,
+        top: 12,
+    },
+
     textInputSection: {
         marginTop: 40,
     },

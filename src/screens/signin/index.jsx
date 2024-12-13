@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
 import StartButton from '../../components/button'
 import signIn from '../../styles/signIn'
 
