@@ -8,17 +8,16 @@ import { colors } from "../theme/colors";
 import TabBarIcon from "../components/router/tabBarIcon";
 
 
-
-
-
-
 function TabBarNavigation() {
     const Tab = createBottomTabNavigator()
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
+                headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: 'black',
+                    backgroundColor: colors.bgColor,
+                    borderColor: null,
+                    height: 53
                 },
                 tabBarIcon: ({ focused, color, size }) => (
                     <TabBarIcon
@@ -28,8 +27,8 @@ function TabBarNavigation() {
                         route={route}
                     />
                 ),
-                tabBarActiveTintColor: colors.btnColor,
-                tabBarInactiveBackgroundColor: colors.text,
+                tabBarActiveTintColor: 'red',
+                tabBarInactiveTintColor: 'white',
             })}>
             <Tab.Screen name={HOME} component={Home} />
             <Tab.Screen name={NEWHOT} component={NewHot} />
