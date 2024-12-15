@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTrendMovies } from "../actions/movieAction";
 
-
 const initialState = {
     trendMovies: [],
     pending: false,
-    error: []
-}
-
+    error: null,
+};
 
 const moviesSlice = createSlice({
     name: 'movies',
@@ -16,18 +14,18 @@ const moviesSlice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(getTrendMovies.pending, state => {
-                state.pending = true
+                state.pending = true;
+                state.error = null;
             })
             .addCase(getTrendMovies.rejected, (state, action) => {
-                state.error = action.error
-                state.pending = false
+                state.error = action.error.message || "Something went wrong!";
+                state.pending = false;
             })
             .addCase(getTrendMovies.fulfilled, (state, action) => {
-                state.trendMovies = action.error
-                state.pending = false
-            })
-    }
-})
+                state.trendMovies = action.payload;
+                state.pending = false;
+            });
+    },
+});
 
-export const { addNewList } = moviesSlice.actions
-export default moviesSlice.reducer
+export default moviesSlice.reducer;

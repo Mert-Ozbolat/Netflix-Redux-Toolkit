@@ -11,6 +11,7 @@ const Home = ({ route }) => {
 
     const dispatch = useDispatch()
     const trendMovies = useSelector(state => state.movie)
+
     console.log(trendMovies)
 
     useEffect(() => {
