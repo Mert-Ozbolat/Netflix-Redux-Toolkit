@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import homesStyle from '../../styles/home'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTrendMovies } from '../../store/actions/movieAction'
+import { IMAGE_BASE_URL } from '../../service/url'
 
 const Home = ({ route }) => {
 
@@ -10,19 +11,23 @@ const Home = ({ route }) => {
     // <Image style={styles.image} source={`${item.image}`} />
 
     const dispatch = useDispatch()
-    const trendMovies = useSelector(state => state.movie)
-
-    console.log(trendMovies)
+    const { trendMovies } = useSelector(state => state.movies)
 
     useEffect(() => {
-        dispatch(getTrendMovies)
+        dispatch(getTrendMovies())
     }, [])
 
     return (
         <View style={homesStyle.container}>
             <FlatList
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
                 data={trendMovies}
-                renderItem={({ item }) => <Text style={{ color: 'white' }}>{item.title}</Text>}
+                renderItem={({ item }) =>
+                    <View>
+                        <Image style={homesStyle.images} source={{ uri: IMAGE_BASE_URL + item?.backdrop_path }} />
+                    </View>
+                }
             />
         </View>
     )
