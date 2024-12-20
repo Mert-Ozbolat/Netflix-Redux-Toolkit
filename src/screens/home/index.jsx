@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image, FlatList, ScrollView } from 'react-native'
+import { View, StyleSheet, Text, Image, FlatList, ScrollView, ActivityIndicator } from 'react-native'
 import React, { useEffect } from 'react'
 import homesStyle from '../../styles/home'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,7 +19,9 @@ const Home = ({ route }) => {
     // <Image style={styles.image} source={`${item.image}`} />
 
     const dispatch = useDispatch()
-    const { topRated } = useSelector(state => state.topRated)
+    const { topRated, pending } = useSelector(state => state.topRated)
+
+    const isLoading = pending
 
     useEffect(() => {
         dispatch(getTrendMovies())
@@ -30,23 +32,36 @@ const Home = ({ route }) => {
 
 
     return (
-        <ScrollView style={homesStyle.container}>
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={homesStyle.container}>
 
-            <View style={homesStyle.header}>
-                {firstTopRatedMovie ? (
-                    <Image
-                        style={homesStyle.headerImage}
-                        source={{ uri: IMAGE_BASE_URL + firstTopRatedMovie.poster_path }}
-                    />
+            {
+                isLoading ? (
+                    <View style={homesStyle.loaderContainer}>
+                        <ActivityIndicator size='large' color="#fff" />
+                    </View>
                 ) : (
-                    <Text style={homesStyle.message}>No top-rated movie available.</Text>
-                )}
+                    <>
 
-                <HeaderButtons />
-            </View>
+                        <View style={homesStyle.header}>
+                            {firstTopRatedMovie ? (
+                                <Image
+                                    style={homesStyle.headerImage}
+                                    source={{ uri: IMAGE_BASE_URL + firstTopRatedMovie.poster_path }}
+                                />
+                            ) : (
+                                <Text style={homesStyle.message}>No top-rated movie available.</Text>
+                            )}
 
-            <Section />
+                            <HeaderButtons />
+                        </View>
 
+                        <Section />
+
+                    </>
+                )
+            }
         </ScrollView>
     )
 }

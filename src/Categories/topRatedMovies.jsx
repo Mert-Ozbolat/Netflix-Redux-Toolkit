@@ -1,19 +1,18 @@
 import { FlatList, Image, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-
 import React, { useEffect } from 'react'
-import { getTrendMovies } from '../store/actions/movieAction'
+import { topRatedMovies } from '../store/actions/movieAction'
 import { IMAGE_BASE_URL } from '../service/url'
 import homesStyle from '../styles/home'
 
 
-const TrendMovies = () => {
+const TopRatedMovies = () => {
 
     const dispatch = useDispatch()
-    const { trendMovies } = useSelector(state => state.movies)
+    const { topRated } = useSelector(state => state.topRated)
 
     useEffect(() => {
-        dispatch(getTrendMovies())
+        dispatch(topRatedMovies())
     }, [])
 
     return (
@@ -21,7 +20,7 @@ const TrendMovies = () => {
             style={homesStyle.flatlist}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            data={trendMovies}
+            data={topRated}
             renderItem={({ item }) =>
                 <View>
                     <Image style={homesStyle.images} source={{ uri: IMAGE_BASE_URL + item?.poster_path }} />
@@ -31,4 +30,4 @@ const TrendMovies = () => {
     )
 }
 
-export default TrendMovies
+export default TopRatedMovies

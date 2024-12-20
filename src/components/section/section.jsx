@@ -3,6 +3,7 @@ import homesStyle from '../../styles/home'
 import Titles from '../titles/titles'
 import TrendMovies from '../../Categories/trendMovies'
 import { titles } from '../../utils/constants'
+import TopRatedMovies from '../../Categories/topRatedMovies'
 
 
 
@@ -10,16 +11,15 @@ const Section = () => {
 
     return (
         <View style={homesStyle.movieSection}>
-
             {
                 titles.map((title) => (
                     <View style={homesStyle.movies}>
                         <Text style={homesStyle.sectionTitle}>{title.title}</Text>
                         <TrendMovies />
+                        {/* <TopRatedMovies /> */}
                     </View>
                 ))
             }
-
         </View>
     )
 }

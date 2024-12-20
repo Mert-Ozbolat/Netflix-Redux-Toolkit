@@ -5,6 +5,7 @@ const initialState = {
     trendMovies: [],
     pending: false,
     error: null,
+    topRated: []
 };
 
 const moviesSlice = createSlice({
