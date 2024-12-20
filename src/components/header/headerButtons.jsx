@@ -1,6 +1,6 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { Add, InfoCircle } from 'iconsax-react-native'
+import { Add, InfoCircle, Play } from 'iconsax-react-native'
 import homesStyle from '../../styles/home'
 
 const HeaderButtons = () => {
@@ -11,7 +11,9 @@ const HeaderButtons = () => {
                 <Text style={homesStyle.headerBtnText}>Add List</Text>
             </TouchableOpacity>
 
-            <Button style={homesStyle.playBtn} title='Play' />
+            <TouchableOpacity style={homesStyle}>
+                <Text style={homesStyle.headerBtnText}><Play size={21} color="#fff" />Play</Text>
+            </TouchableOpacity>
 
 
             <TouchableOpacity>

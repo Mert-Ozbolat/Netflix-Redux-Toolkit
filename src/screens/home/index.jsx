@@ -5,6 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTrendMovies, topRatedMovies } from '../../store/actions/movieAction'
 import { IMAGE_BASE_URL } from '../../service/url'
 import HeaderButtons from '../../components/header/headerButtons'
+import Section from '../../components/section/section'
+
+
+
+
+
+
 
 const Home = ({ route }) => {
 
@@ -12,7 +19,6 @@ const Home = ({ route }) => {
     // <Image style={styles.image} source={`${item.image}`} />
 
     const dispatch = useDispatch()
-    const { trendMovies } = useSelector(state => state.movies)
     const { topRated } = useSelector(state => state.topRated)
 
     useEffect(() => {
@@ -20,7 +26,7 @@ const Home = ({ route }) => {
         dispatch(topRatedMovies())
     }, [])
 
-    const firstTopRatedMovie = topRated && topRated.length > 0 ? topRated[4] : null;
+    const firstTopRatedMovie = topRated && topRated.length > 0 ? topRated[7] : null;
 
 
     return (
@@ -39,19 +45,8 @@ const Home = ({ route }) => {
                 <HeaderButtons />
             </View>
 
+            <Section />
 
-
-            <FlatList
-                style={homesStyle.flatlist}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                data={trendMovies}
-                renderItem={({ item }) =>
-                    <View>
-                        <Image style={homesStyle.images} source={{ uri: IMAGE_BASE_URL + item?.poster_path }} />
-                    </View>
-                }
-            />
         </ScrollView>
     )
 }

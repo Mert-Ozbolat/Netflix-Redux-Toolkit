@@ -9,6 +9,7 @@ const homesStyle = StyleSheet.create({
         backgroundColor: colors.bgColor,
         flex: 1
     },
+
     header: {
         display: 'flex',
         alignItems: 'center',
@@ -16,12 +17,15 @@ const homesStyle = StyleSheet.create({
         height: 500,
         width: '100%'
     },
+
     headerImage: {
         height: '100%',
         width: '90%',
         objectFit: 'contain',
         borderRadius: 7
     },
+
+
     headerButtons: {
         width: '60%',
         flexDirection: 'row',
@@ -30,16 +34,43 @@ const homesStyle = StyleSheet.create({
         justifyContent: 'space-between',
         marginVertical: 20
     },
+
+
     playBtn: {
         width: 400,
         backgroundColor: colors.btnColor
     },
+
+
     headerBtnText: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: colors.text
     },
+
+    movieSection: {
+        marginTop: 60,
+    },
+
+    movieHeader: {
+        color: colors.text,
+        fontSize: 20,
+        marginLeft: 10
+    },
+    movies: {
+        marginTop: 20
+    },
+
     flatlist: {
-        marginVertical: 90
+        marginVertical: 10
     },
+
+    sectionTitle: {
+        color: colors.text,
+        fontSize: 20,
+        marginLeft: 10,
+        fontWeight: '500'
+    },
+
     images: {
         backgroundColor: 'gray',
         objectFit: 'cover',
@@ -47,7 +78,7 @@ const homesStyle = StyleSheet.create({
         height: 250,
         margin: 10,
         borderRadius: 3,
-    }
+    },
 })
 
 
