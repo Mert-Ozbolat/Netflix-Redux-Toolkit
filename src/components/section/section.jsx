@@ -1,41 +1,32 @@
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
-import homesStyle from '../../styles/home'
-import { titles } from '../../utils/constants'
-import Titles from '../titles/titles'
-import TrendMovies from '../../Categories/trendMovies'
-import TopRatedMovies from '../../Categories/topRatedMovies'
+import React from 'react';
+import { Text, View } from 'react-native';
+import homesStyle from '../../styles/home';
+import { titles } from '../../utils/constants';
+import TrendMovies from '../../Categories/trendMovies';
+import TopRatedMovies from '../../Categories/topRatedMovies';
 
-
-
-const Section = (item) => {
-
-    const setData = () => {
-        switch (item.id) {
+const Section = () => {
+    const renderMovie = (id) => {
+        switch (id) {
             case 1:
-                return TrendMovies;
+                return <TrendMovies />;
             case 2:
-                return TopRatedMovies;
+                return <TrendMovies />;
             default:
-                return TopRatedMovies
+                return <TrendMovies />;
         }
-    }
+    };
 
     return (
         <View style={homesStyle.movieSection}>
-
-            {
-                titles.map((title) => (
-                    <View style={homesStyle.movies}>
-                        <Text style={homesStyle.sectionTitle}>{title.title}</Text>
-                        <TrendMovies />
-                        {/* <TopRatedMovies /> */}
-                    </View>
-                ))
-            }
-
-
+            {titles.map((title) => (
+                <View key={title.id} style={homesStyle.movies}>
+                    <Text style={homesStyle.sectionTitle}>{title.title}</Text>
+                    {renderMovie(title.id)}
+                </View>
+            ))}
         </View>
-    )
-}
+    );
+};
 
-export default Section
+export default Section;
