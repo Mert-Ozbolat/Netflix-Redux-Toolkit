@@ -4,6 +4,8 @@ import homesStyle from '../../styles/home';
 import { titles } from '../../utils/constants';
 import TrendMovies from '../../Categories/trendMovies';
 import TopRatedMovies from '../../Categories/topRatedMovies';
+import TrendTv from '../../Categories/trendTv';
+
 
 const Section = () => {
     const renderMovie = (id) => {
@@ -11,7 +13,7 @@ const Section = () => {
             case 1:
                 return <TrendMovies />;
             case 2:
-                return <TrendMovies />;
+                return <TrendTv />;
             default:
                 return <TrendMovies />;
         }
