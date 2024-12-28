@@ -15,7 +15,7 @@ const titles = [
     },
     {
         id: 3,
-        title: 'Selected for You Today'
+        title: ' New Releases'
     },
     {
         id: 4,
@@ -23,7 +23,7 @@ const titles = [
     },
     {
         id: 5,
-        title: 'New Releases'
+        title: 'Selected for You Today'
     },
 ]
 

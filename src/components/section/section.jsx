@@ -3,8 +3,9 @@ import { Text, View } from 'react-native';
 import homesStyle from '../../styles/home';
 import { titles } from '../../utils/constants';
 import TrendMovies from '../../Categories/trendMovies';
-import TopRatedMovies from '../../Categories/topRatedMovies';
 import TrendTv from '../../Categories/trendTv';
+import Upcoming from '../../Categories/upcoming';
+import TopRated from '../../Categories/topRatedMovies';
 
 
 const Section = () => {
@@ -14,6 +15,12 @@ const Section = () => {
                 return <TrendMovies />;
             case 2:
                 return <TrendTv />;
+            case 3:
+                return <Upcoming />;
+            case 4:
+                return <Upcoming />;
+            case 5:
+                return <TopRated />;
             default:
                 return <TrendMovies />;
         }

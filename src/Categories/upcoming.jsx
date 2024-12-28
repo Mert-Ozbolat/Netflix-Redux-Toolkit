@@ -6,10 +6,10 @@ import { IMAGE_BASE_URL } from '../service/url'
 import homesStyle from '../styles/home'
 
 
-const TopRated = () => {
+const Upcoming = () => {
 
     const dispatch = useDispatch()
-    const { topRated } = useSelector(state => state.topRated)
+    const { Upcoming } = useSelector(state => state.upcoming)
 
     useEffect(() => {
         dispatch(getUpcoming())
@@ -20,7 +20,7 @@ const TopRated = () => {
             style={homesStyle.flatlist}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            data={topRated}
+            data={Upcoming}
             renderItem={({ item }) =>
                 <View>
                     <Image style={homesStyle.images} source={{ uri: IMAGE_BASE_URL + item?.poster_path }} />
@@ -30,4 +30,4 @@ const TopRated = () => {
     )
 }
 
-export default TopRated
+export default Upcoming
