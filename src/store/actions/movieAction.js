@@ -26,4 +26,7 @@ const getUpcoming = createAsyncThunk('movies/upcomingMovies', async params => {
 })
 
 
+const search = createAsyncThunk('')
+
+
 export { getTrendMovies, topRatedMovies, getTrendTv, getUpcoming }

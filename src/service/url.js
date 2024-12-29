@@ -7,5 +7,7 @@ const TOP_RATED_MOVIES = '/movie/top_rated'
 const TREND_TV = '/trending/tv/day'
 const UPCOMING = 'movie/upcoming'
 
+const SEARCH = '/search/movie?query='
+
 
 export { BASE_URL, TREND_MOVIES, TREND_TV, TOP_RATED_MOVIES, UPCOMING, IMAGE_BASE_URL }
