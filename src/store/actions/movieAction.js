@@ -10,17 +10,17 @@ const getTrendMovies = createAsyncThunk('movies/trendMovies', async params => {
 })
 
 
-const topRatedMovies = createAsyncThunk('topRated/topRated', async params => {
+const topRatedMovies = createAsyncThunk('movies/topRatedMovies', async params => {
     const response = await getRequest(TOP_RATED_MOVIES, params);
     return response.data.results
 })
 
-const getTrendTv = createAsyncThunk('trendTv/trendTv', async params => {
+const getTrendTv = createAsyncThunk('movies/TrendTv', async params => {
     const response = await getRequest(TREND_TV, params);
     return response.data.results
 })
 
-const getUpcoming = createAsyncThunk('upcoming/upcoming', async params => {
+const getUpcoming = createAsyncThunk('movies/upcomingMovies', async params => {
     const response = await getRequest(UPCOMING, params);
     return response.data.results
 })

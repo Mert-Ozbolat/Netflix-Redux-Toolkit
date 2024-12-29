@@ -8,11 +8,7 @@ import upcomingSlice from "./slice/upcomingSlice"
 
 const store = configureStore({
     reducer: {
-        watchList: watchListSlice,
-        movies: moviesSlice,
-        topRated: topRated,
-        trendTv: trendTvSlice,
-        upcoming: upcomingSlice
+        movies: moviesSlice
     }
 })
 
