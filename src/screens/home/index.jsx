@@ -8,11 +8,6 @@ import HeaderButtons from '../../components/header/headerButtons'
 import Section from '../../components/section/section'
 
 
-
-
-
-
-
 const Home = ({ route }) => {
 
     // const { item } = route.params;

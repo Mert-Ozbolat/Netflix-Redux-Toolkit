@@ -9,7 +9,7 @@ import homesStyle from '../styles/home'
 const TrendTv = () => {
 
     const dispatch = useDispatch()
-    const { TrendTv } = useSelector(state => state.trendTv)
+    const { TrendTv } = useSelector(state => state.movies)
 
     useEffect(() => {
         dispatch(getTrendTv())

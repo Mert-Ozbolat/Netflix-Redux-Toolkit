@@ -9,7 +9,7 @@ import homesStyle from '../styles/home'
 const Upcoming = () => {
 
     const dispatch = useDispatch()
-    const { Upcoming } = useSelector(state => state.upcoming)
+    const { Upcoming } = useSelector(state => state.movies)
 
     useEffect(() => {
         dispatch(getUpcoming())

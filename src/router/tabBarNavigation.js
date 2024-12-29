@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DOWNLOADS, HOME, NEWHOT, SEARCH } from "../utils/routes";
+import { DOWNLOADS, HOME, HOMETAB, NEWHOT, SEARCH } from "../utils/routes";
 import Home from "../screens/home";
 import Search from "../screens/search";
 import Downloads from "../screens/downloads";
@@ -30,7 +30,7 @@ function TabBarNavigation() {
                 tabBarActiveTintColor: 'red',
                 tabBarInactiveTintColor: 'white',
             })}>
-            <Tab.Screen name={HOME} component={Home} />
+            <Tab.Screen name={HOMETAB} component={Home} />
             <Tab.Screen name={NEWHOT} component={NewHot} />
             <Tab.Screen name={SEARCH} component={Search} />
             <Tab.Screen name={DOWNLOADS} component={Downloads} />
